@@ -1,0 +1,110 @@
+/* --- Root Variables for Colors & Fonts --- */
+:root {
+    --bg-color: #0d0f14;
+    --container-bg: #1a1c24;
+    --container-border: #363a49;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a3b0;
+    --yellow-primary: #f8c92a;
+    --yellow-dark: #3a331c;
+    --yellow-border: #5a4d2c;
+    --pink-primary: #e662b3;
+    --blue-primary: #4a80f0;
+    --green-online: #2ecc71;
+    --telegram-blue: #2AABEE;
+    --font-family: 'Poppins', sans-serif;
+}
+
+/* --- Basic Setup & Body Styling --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--font-family); background-color: var(--bg-color); color: var(--text-primary); display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 2rem; }
+
+/* --- Keyframe Animations --- */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(46, 204, 113, 0); } 100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); } }
+@keyframes premiumGlow { 0% { box-shadow: 0 0 5px var(--yellow-primary), 0 0 10px var(--yellow-primary); } 50% { box-shadow: 0 0 15px var(--yellow-primary), 0 0 25px var(--yellow-primary); } 100% { box-shadow: 0 0 5px var(--yellow-primary), 0 0 10px var(--yellow-primary); } }
+
+/* --- Main Container --- */
+.access-container { background-color: var(--container-bg); border: 1px solid var(--container-border); border-radius: 20px; padding: 2.5rem; width: 100%; max-width: 900px; display: flex; flex-direction: column; gap: 1.5rem; animation: fadeIn 0.8s ease-out forwards; }
+
+/* --- Header Section --- */
+.header { text-align: center; }
+.header-pills { display: flex; justify-content: center; align-items: center; gap: 1rem; }
+.header h1 { font-size: 2.5rem; font-weight: 600; margin-top: 0.75rem; }
+.pill { display: inline-block; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9rem; font-weight: 500; }
+.instant-access-pill { background-color: var(--blue-primary); color: white; }
+.instant-access-pill .fa-bolt { margin-right: 0.5rem; }
+.telegram-icon-link { color: var(--telegram-blue); font-size: 2rem; transition: all 0.3s ease; }
+.telegram-icon-link:hover { color: #53c4f7; transform: scale(1.1); }
+
+/* --- Premium Offer Card --- */
+.premium-offer-card { background-color: var(--yellow-dark); border: 1px solid var(--yellow-border); border-radius: 12px; padding: 1.25rem; display: flex; align-items: center; gap: 1.5rem; animation: premiumGlow 4s infinite ease-in-out; text-decoration: none; color: inherit; transition: all 0.3s ease; }
+.premium-offer-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); }
+.crown-icon { font-size: 2rem; color: var(--yellow-primary); }
+.offer-details { flex-grow: 1; }
+.offer-details h2 { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.25rem; }
+.offer-details .price { color: var(--yellow-primary); }
+.offer-details p { font-size: 0.9rem; color: var(--text-secondary); }
+.btn { padding: 0.8rem 1.5rem; border-radius: 8px; border: none; font-family: var(--font-family); font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.3s ease; display: inline-block; }
+.btn-premium { background-color: var(--yellow-primary); color: #333; }
+.premium-offer-card:hover .btn-premium { transform: scale(1.05); box-shadow: 0 4px 20px rgba(248, 201, 42, 0.4); }
+
+/* --- Separator (OR) --- */
+.separator { display: flex; align-items: center; text-align: center; color: var(--text-secondary); font-weight: 500; }
+.separator::before, .separator::after { content: ''; flex: 1; border-bottom: 1px solid var(--container-border); }
+.separator span { padding: 0 1rem; }
+
+/* --- Action List & Items --- */
+.action-list { display: flex; flex-direction: column; gap: 1rem; }
+.server-grid-container { display: flex; gap: 1rem; width: 100%; }
+.server-column { flex: 1; display: flex; flex-direction: column; gap: 1rem; }
+.action-item { background-color: #272a34; border: 1px solid var(--container-border); border-radius: 12px; padding: 1rem 1.2rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; text-decoration: none; color: inherit; }
+.action-item:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); border-color: var(--blue-primary); }
+.item-left { display: flex; align-items: center; gap: 1.2rem; }
+.item-left i { font-size: 1.5rem; }
+.rocket-icon { color: var(--pink-primary); }
+.video-icon { color: var(--text-secondary); }
+
+/* UPDATED: Styles for the text inside action items */
+.item-text h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+.item-text p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+/* NEW: Style for the second line of the server title */
+.item-text p.server-title-line {
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.check-icon { color: var(--green-online); font-size: 1rem !important; }
+.item-right .status-indicator { color: var(--green-online); font-weight: 500; display: flex; align-items: center; gap: 0.5rem; }
+.item-right .status-indicator::before { content: ''; display: block; width: 10px; height: 10px; background-color: var(--green-online); border-radius: 50%; animation: pulse 2s infinite; }
+.help-pill { background-color: var(--pink-primary); color: white; }
+
+/* --- Help Box Card --- */
+.help-box-card { background-color: rgba(58, 51, 28, 0.5); border: 1px solid var(--yellow-border); border-radius: 12px; padding: 1.25rem; display: flex; align-items: flex-start; gap: 1.5rem; }
+.help-icon { font-size: 1.75rem; color: var(--pink-primary); margin-top: 0.2rem; }
+.help-details h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.25rem; }
+.help-details p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .server-grid-container { flex-direction: column; }
+}
+@media (max-width: 600px) {
+    body { padding: 1rem; }
+    .access-container { padding: 1.5rem; max-width: 100%; }
+    .header h1 { font-size: 2rem; }
+    .premium-offer-card { flex-direction: column; align-items: flex-start; text-align: left; }
+    .btn-premium { width: 100%; text-align: center; }
+}
